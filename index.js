@@ -6,6 +6,8 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const connectdb = require("./database");
 
+//routes path
+const authRouters = requier('./routes/authRouters')
 
 //dotenv
 dotenv.config()
@@ -23,6 +25,9 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(morgan('dev'))
 
 const port = process.env.port || 3000;
+
+//API routes
+app.use('/api/v1/auth',authRouters);
 
 //listening the port
 

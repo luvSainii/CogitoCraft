@@ -5,9 +5,10 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const connectdb = require("./database");
+const errorHandler = require("./middleware/errorMiddleware");
 
 //routes path
-const authRouters = requier('./routes/authRouters')
+const authRouters = require('./routes/authRouters')
 
 //dotenv
 dotenv.config()
@@ -19,10 +20,11 @@ connectdb();
 const app = express();
 
 //middlewares
-app.use(cors())
-app.use(express.json())
-app.use(bodyParser.urlencoded({extended:false}))
-app.use(morgan('dev'))
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(morgan('dev'));
+app.use(errorHandler);
 
 const port = process.env.port || 3000;
 

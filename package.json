@@ -1,12 +1,14 @@
 {
   "name": "chatgpt_clone",
   "version": "1.0.0",
-  "description": "",
+  "description": "chatgpt gpt clone",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "index": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "chatui": "npm start --prefix ./chatui",
+    "dev": "concurrently \"npm run index\" \"npm run chatui\""
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "colors": "^1.4.0",
+    "concurrently": "^8.2.0",
     "cookie": "^0.5.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

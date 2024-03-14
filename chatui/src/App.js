@@ -1,14 +1,13 @@
 import {Routes,Route} from 'react-router-dom';
-import {Navbar} from './components/Navbar'
+import Navbar from './components/Navbar'
 import './App.css';
-import {Homepage} from './pages/Homepage';
-import {Register} from './pages/Register';
-import { Login } from '@mui/icons-material';
+import Homepage from './pages/Homepage';
+import Register from './pages/Register';
+import  Login  from './pages/Login';
 
 function App() {
   return (
   <>
-    <Navbar/>
     <Routes>
       <Route path='/' element={<Homepage/>}/>
       <Route path='/register' element={<Register/>}/>

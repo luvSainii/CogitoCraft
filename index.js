@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 // auth Routes
 app.use('/api/v1/auth', authRoutes);
